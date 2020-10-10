@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top {$homePage ? 'homepage' : 'no-homepage'}" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{plink :Homepage:}">
-        <img id="logo" src="assets/img/logo.png" alt="" />
+        <img id="logo" src="/assets/img/logo.png" alt="" />
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             
@@ -11,7 +11,7 @@
             <ul class="navbar-nav text-uppercase ml-auto">
             {foreach $links as $link}
                 <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{plink $link['link']}">{$link['title']}</a>
+                  <a class="{$homePage ? 'nav-link' : 'nav-link-no-homepage'} js-scroll-trigger" href="{plink $link['link']}">{$link['title']}</a>
                 </li>
             {/foreach}
             </ul>

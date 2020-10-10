@@ -1,15 +1,25 @@
 parameters:
 
-
 application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
 
+extensions:
+    translation: Contributte\Translation\DI\TranslationExtension
+
+translation:
+    locales:
+        whitelist: [cs, en]
+        default: cs
+        fallback: [cs]
+    dirs:
+        - %appDir%/lang
+    localeResolvers:
+        - Contributte\Translation\LocalesResolvers\Router
 
 di:
 	export:
@@ -20,4 +30,6 @@ di:
 services:
 	router: App\Router\RouterFactory::createRouter
 	- App\Controls\MenuControl\MenuControlFactory
+	- Contributte\Translation\LocalesResolvers\Session
+
 
