@@ -19,3 +19,5 @@ di:
 
 services:
 	router: App\Router\RouterFactory::createRouter
+	- App\Controls\MenuControl\MenuControlFactory
+
