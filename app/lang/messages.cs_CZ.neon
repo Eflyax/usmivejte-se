@@ -1,5 +1,7 @@
 services: Služby
 pricing: Ceník
+cenikVykonu: Ceník výkonů
+cenikHygienickychPomucek: CENÍK HYGIENICKÝCH POMŮCEK
 serviceLaughingGas: Rajský plyn
 serviceLaughingGasDescription: "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur."
 serviceAnesthesia: Anestezie
@@ -37,8 +39,10 @@ zirkonovyMeziclen: "Zirkonový mezičlen"
 zavedeniBiomet: "Zavedení implantátu BIOMET 3i včetně augmentace"
 abutmanBiomet: "Abutmant BIOMET 3i (včetně originálního samořezného šroubku)"
 osetreniMimoHodiny: "Ošetření mimo ordinační hodiny"
-
-
+####
+####
+####
+####
 kartacky: "Kartáčky"
 soloKartacek: "Solo kartáček 5460 CURAPROX"
 trojKartacek: "Trojbalení 5460 CURAPROX"
@@ -65,6 +69,6 @@ detskydudlik: "Anatomický dětský dudlík 2ks"
 detskeKousatko: "Dětské kousátko"
 curasafe: "Curasafe (pro transport ulomených zubů)"
 krabickaNaZub: "Krabička na vytržený zoubek"
-vykon: "Výkon"
 
+vykon: "Výkon"
 az: "až"

@@ -13,7 +13,7 @@ extensions:
 
 translation:
     locales:
-        whitelist: [cs, en]
+        whitelist: [cs, ru, en]
         default: cs
         fallback: [cs]
     dirs:

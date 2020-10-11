@@ -9,6 +9,10 @@
     .price-list .item{
         font-weight: bolder;
     }
+    .price-list .item.child{
+        font-weight: bolder;
+        padding-left: 15px;
+    }
     .price-list .price{
         color: #AA1930;
         padding-left: 20px;
@@ -24,10 +28,7 @@
 <br>
 <br>
 <br>
-<br>
-
-<p class="price-list-header">Ceník výkonů</p>
-
+<p class="price-list-header">{_cenikVykonu}</p>
 <table class="price-list">
 {include priceRow, 'komplexVysetreni'}
 {include priceRow, 'vizualizacePlaku'}
@@ -67,14 +68,59 @@
 {include priceRow, 'abutmanBiomet'}
 {include priceRowEmpty}
 {include priceRow, 'osetreniMimoHodiny'}
-
+</table>
+<br>
+<br>
+<br>
+<p class="price-list-header">{_cenikHygienickychPomucek}</p>
+<table class="price-list">
+{include priceRow, 'kartacky'}
+{include priceRowEmpty}
+{include priceRow, 'soloKartacek', true}
+{include priceRow, 'trojKartacek', true}
+{include priceRow, 'dvojKartacek', true}
+{include priceRow, 'jednosvazek', true}
+{include priceRow, 'detskyKartacek', true}
+{include priceRow, 'cestovniKartacek', true}
+{include priceRowEmpty}
+{include priceRow, 'mezizubniHygiena'}
+{include priceRowEmpty}
+{include priceRow, 'mezizubniKartacky', true}
+{include priceRow, 'superFloss', true}
+{include priceRowEmpty}
+{include priceRow, 'ustniVody'}
+{include priceRowEmpty}
+{include priceRow, 'plaqueAgent', true}
+{include priceRow, 'curasept', true}
+{include priceRow, 'odolKrtecek', true}
+{include priceRowEmpty}
+{include priceRow, 'kremyGelyPasty'}
+{include priceRowEmpty}
+{include priceRow, 'pastePlus', true}
+{include priceRow, 'odolKrtecekPasta', true}
+{include priceRow, 'presidentPasta', true}
+{include priceRow, 'opalescence', true}
+{include priceRow, 'curaseptGel', true}
+{include priceRow, 'curaseptGelPasta', true}
+{include priceRowEmpty}
+{include priceRow, 'ostatni'}
+{include priceRowEmpty}
+{include priceRow, 'detskydudlik', true}
+{include priceRow, 'detskeKousatko', true}
+{include priceRow, 'curasafe', true}
+{include priceRow, 'krabickaNaZub', true}
 </table>
 {/block}
 
-
-{define #priceRow, $index}
+{define #priceRow, $index, $child}
     <tr>
-        <td class="item">{_$index}</td>   <td class="price">{$priceList[$index]}</td>
+        <td class="item {$child ? 'child':''}">{_$index}</td>
+        <td class="price">
+        {ifset $priceList[$index]}
+            {$priceList[$index]}
+        {else}
+        {/ifset}
+        </td>
     </tr>
 {/define}
 {define #priceRowEmpty}

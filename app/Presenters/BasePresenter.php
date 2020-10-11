@@ -24,6 +24,11 @@ abstract class BasePresenter extends Presenter
     /** @var Session @inject */
     public $translatorSessionResolver;
 
+public function startup() {
+parent::startup();
+$this->translator->setLocale('ru');
+}
+
     public function beforeRender()
     {
         parent::beforeRender();

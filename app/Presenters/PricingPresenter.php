@@ -54,7 +54,7 @@ final class PricingPresenter extends BasePresenter
             "odolKrtecek" => $this->formatPrice(50),
 
             "pastePlus" => $this->formatPrice(565),
-            "odolKrtecek" => $this->formatPrice(40),
+            "odolKrtecekPasta" => $this->formatPrice(40),
             "presidentPasta" => $this->formatPrice(70),
             "opalescence" => $this->formatPrice(300),
             "curaseptGel" => $this->formatPrice(210),
