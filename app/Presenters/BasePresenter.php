@@ -10,6 +10,7 @@ use Nette\Localization\ITranslator;
 use App\Controls\MenuControl\MenuControl;
 use App\Controls\MenuControl\MenuControlFactory;
 use Contributte\Translation\LocalesResolvers\Session;
+use Latte\Runtime\Filters;
 
 abstract class BasePresenter extends Presenter
 {
@@ -40,5 +41,13 @@ abstract class BasePresenter extends Presenter
         $homePage = $this->getPresenter()->getName() == "Homepage";
 
         return $this->menuControlFactory->create($homePage);
+    }
+
+    public function formatPrice($value)
+    {
+        $value = number_format($value, 0, ",", " ");
+        $value .= ',-';
+
+        return $value;
     }
 }

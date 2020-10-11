@@ -1,1 +1,84 @@
 {block content}
+<style>
+    .price-list{
+    margin: 0 auto;
+    }
+    .price-list tr{
+    border-bottom: 1px solid #f2f2f2;
+    }
+    .price-list .item{
+        font-weight: bolder;
+    }
+    .price-list .price{
+        color: #AA1930;
+        padding-left: 20px;
+    }
+    .price-list-header{
+        font-size: 25px;
+        font-weight: bold;
+        color: #AA1930;
+        text-transform: uppercase;
+        text-align: center;
+    }
+</style>
+<br>
+<br>
+<br>
+<br>
+
+<p class="price-list-header">Ceník výkonů</p>
+
+<table class="price-list">
+{include priceRow, 'komplexVysetreni'}
+{include priceRow, 'vizualizacePlaku'}
+{include priceRow, 'hygienickaInstruktaz'}
+{include priceRow, 'odstraneniKamene'}
+{include priceRow, 'airFlow'}
+{include priceRow, 'rajskyPlyn'}
+{include priceRowEmpty}
+{include priceRow, 'rentgenMaly'}
+{include priceRow, 'rentgenVelky'}
+{include priceRowEmpty}
+{include priceRow, 'anestezie'}
+{include priceRow, 'bilaVypln'}
+{include priceRow, 'calxyd'}
+{include priceRow, 'biner'}
+{include priceRowEmpty}
+{include priceRow, 'devipasta'}
+{include priceRow, 'calxydRozsireny'}
+{include priceRow, 'zaplneniKanalku1'}
+{include priceRow, 'zaplneniKanalku2'}
+{include priceRow, 'zaplneniKanalku3'}
+{include priceRow, 'zaplneniKanalku4'}
+{include priceRow, 'kompozitniCepy'}
+{include priceRowEmpty}
+{include priceRow, 'beyondPlus'}
+{include priceRowEmpty}
+{include priceRow, 'zubniSperk'}
+{include priceRowEmpty}
+{include priceRow, 'extrakceZubu'}
+{include priceRow, 'extrakceZubuChirurg'}
+{include priceRow, 'augmentace'}
+{include priceRow, 'kyretaz'}
+{include priceRowEmpty}
+{include priceRow, 'zirkonovaKorunka'}
+{include priceRow, 'zirkonovyMeziclen'}
+{include priceRow, 'zavedeniBiomet'}
+{include priceRow, 'abutmanBiomet'}
+{include priceRowEmpty}
+{include priceRow, 'osetreniMimoHodiny'}
+
+</table>
+{/block}
+
+
+{define #priceRow, $index}
+    <tr>
+        <td class="item">{_$index}</td>   <td class="price">{$priceList[$index]}</td>
+    </tr>
+{/define}
+{define #priceRowEmpty}
+    <tr>
+        <td class="item">&nbsp;</td><td class="price"></td>
+    </tr>
+{/define}
